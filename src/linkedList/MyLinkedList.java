@@ -9,7 +9,9 @@ public class MyLinkedList {
 		this.head= null;
 		this.tail = null;
 	}
-	
+	/*
+	 * Insert elements in reverse order
+	 */
 	public void add(INode node) {
 		if(this.head == null) {
 			this.head = node;
@@ -23,6 +25,9 @@ public class MyLinkedList {
 			this.head.setNext(temp);
 		}
 	}
+	/*
+	 * Printing the linked list elements
+	 */
 	public void printNode() {
 		StringBuilder nodes = new  StringBuilder("Node keys: ");
 		
@@ -37,7 +42,9 @@ public class MyLinkedList {
 		System.out.println(nodes);
 	}
 	
-	
+	/*
+	 * Insert elements in a order
+	 */
 	public void append(INode newNode) {
 		
 		if (this.head == null) {
@@ -50,29 +57,14 @@ public class MyLinkedList {
 		this.tail = newNode;
 		}
 		}
-	
+	/*
+	 * Insert elements in a order
+	 */
 	public void insert(INode myNode, INode newNode) {
 		INode temp = myNode.getNext();
 		myNode.setNext(newNode);
 		newNode.setNext(temp);
 	}
 	
-	/*
-	 *pop method will delete the first element in the linked list.
-	 */
-	public INode pop() {
-		INode node = this.head;
-		this.head = head.getNext();
-		return node;
-	}
-
-	public INode popLast() {
-	INode temp = head;
-	while(temp.getNext() != this.tail) {
-		temp = temp.getNext();
-	}
-	this.tail = temp;
-	temp = null;
-	return temp;
-	}
+	
 }
